@@ -25,14 +25,23 @@ void queue::enqueue(int value){
         return;
     }
     else{
-        rear++;
-        arr[rear]=value;
-        cout<<"Element inserted successfully"<<endl;
+        if(rear==-1){
+            front++;
+            rear++;
+            arr[rear]=value;
+            cout<<"Element inserted successfully"<<endl;
+        }
+        else{
+             rear++;
+             arr[rear]=value;
+             cout<<"Element inserted successfully"<<endl;
+        }
     }
 }
 int queue::dequeue(){
     if(isEmpty()){
         cout<<"Queue is Empty"<<endl;
+        return 0;
     }
     else{
         int x=arr[front++];
@@ -53,14 +62,14 @@ bool queue::isFull(){
 }
 int queue::peek(){
     if(!isEmpty())
-        return arr[front];
+        return arr[rear];
     else{
         cout<<"Queue is Empty"<<endl;
         return -1;
     }
 }
 int queue::getSize(){
-    return (rear-front+1);
+    return ((rear-front)+1);
 }
 int main(){
     queue sc;
