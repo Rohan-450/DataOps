@@ -29,6 +29,7 @@ void stack::push(int value){
 int stack::pop(){
     if(isEmpty()){
         cout<<"Stack is Empty"<<endl;
+        return 0;
     }
     else{
         int x=arr[top--];
