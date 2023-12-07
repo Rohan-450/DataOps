@@ -1,5 +1,4 @@
 #include<stack>
-#include<cmath>
 #include<iostream>
 using namespace std;
 int op1,op2;
